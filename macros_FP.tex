@@ -1,0 +1,153 @@
+% start of paragraph with no indent
+\parindent0pt
+
+% insert packages in alphabetical order
+\usepackage{algorithm, algpseudocode, amssymb, amsthm, bbm, csquotes, docmute, enumitem, float, geometry, graphicx, hyphenat, listings, mathtools, physics, tcolorbox, tikz, tocloft, xcolor, natbib}
+\usepackage[english]{babel}
+
+% load packages
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{amsfonts}
+\usepackage[usenames, dvipsnames]{color}
+%\usepackage{bbold}
+%\usepackage{url}
+\usepackage{upgreek}
+\usepackage{placeins}
+\usepackage{empheq}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\definecolor{red}{RGB}{255, 0, 0}
+\usepackage{tabto}
+\usepackage{tgtermes,tgheros} 
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\titleformat{\section}[block]
+  {\fontsize{12}{15}\bfseries\sffamily\filcenter}
+  {\thesection}
+  {1em}
+  {\MakeUppercase}
+\titleformat{\subsection}[hang]
+  {\fontsize{12}{15}\bfseries\sffamily}
+  {\thesubsection}
+  {1em}
+  {}
+
+\allowdisplaybreaks
+
+% math symbols
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\bB}{\mathbb{B}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bD}{\mathbb{D}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bG}{\mathbb{G}}
+\newcommand{\bH}{\mathbb{H}}
+\newcommand{\bI}{\mathbb{I}}
+\newcommand{\bJ}{\mathbb{J}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bL}{\mathbb{L}}
+\newcommand{\bM}{\mathbb{M}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bO}{\mathbb{O}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\bT}{\mathbb{T}}
+\newcommand{\bU}{\mathbb{U}}
+\newcommand{\bV}{\mathbb{V}}
+\newcommand{\bW}{\mathbb{W}}
+\newcommand{\bX}{\mathbb{X}}
+\newcommand{\bY}{\mathbb{Y}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+\NewDocumentCommand{\codeword}{v}{%
+\texttt{\textcolor{blue}{#1}}%
+}
+
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+\newcommand{\e}{\text{e}}
+
+\newcommand{\ber}{\text{Ber}}
+\newcommand{\bin}{\text{Bin}}
+\newcommand{\poi}{\text{Poi}}
+\newcommand{\geo}{\text{Geo}}
+\newcommand{\Exp}{\text{Exp}}
+
+\newcommand{\cov}{\text{Cov}}
+\newcommand{\corr}{\rho}
+\newcommand{\risk}{\text{R}}
+\newcommand{\bias}{\text{Bias}}
+\newcommand{\mse}{\text{MSE}}
+\newcommand{\se}{\text{SE}}
+\newcommand{\elbo}{\text{ELBO}}
+\newcommand{\kl}{\text{KL}}
+
+\newcommand{\acov}{\text{acov}}
+\newcommand{\acorr}{\text{acorr}}
+\newcommand{\xcov}{\text{xcov}}
+\newcommand{\xcorr}{\text{xcorr}}
+\newcommand{\pacorr}{\text{pacorr}}
+\newcommand{\pacov}{\text{pacov}}
+
+\newcommand{\relu}{\text{ReLU}}
+
+\newcommand{\deriv}[2]{\frac{\partial #1}{\partial #2}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% math environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{task}[definition]{Task}
+
+\newenvironment{boxedtheorem}[1][]
+{\begin{tcolorbox}[colback=white!95!gray, colframe=black, title=#1]}
+{\end{tcolorbox}}
+
+\newenvironment{boxeddefinition}[1][]
+{\begin{tcolorbox}[colback=white, colframe=grey, title=#1]}
+{\end{tcolorbox}}
+

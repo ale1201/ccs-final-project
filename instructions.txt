@@ -1,0 +1,109 @@
+
+Final Project
+Computational Cognitive Science: Summer Term 2026
+Prof. Georgia Koppe
+Sima Hashemi, Andre Herz
+July 1, 2026
+Project Deadline: August 31, 2026
+GOAL OF THIS PROJECT
+You will model both the choices and the reaction times (RTs) that participants produce in a value-based decision
+task. You will commit to a single valuation model — a discounting process that assigns a subjective value to
+each option — and couple it to choice in the conventional way. On top of this fixed value computation you
+will build (at least) three different RT models: different psychologically motivated ways in which the subjective
+values map onto response times. Both choices and RTs are thus driven by the same latent values; that shared
+valuation is what makes the model multimodal. You will carry out the entire modelling pipeline on your own:
+specification, inference, identifiability, reliability, out-of-sample prediction, comparison, and a reasoned recom-
+mendation. The emphasis on demonstrating that you understand why a model behaves the way it does and what
+each evaluation step actually tells you.
+TASK INSTRUCTIONS
+• Data. Choose one of the two available data sets (descriptions on the last page): 1) a probability discount-
+ing task or 2) a delay discounting task. Each data set contains many participants and, per participant, an
+inference run (data train, “run A”) and an evaluation run (data test, “run B”). The two modalities
+you must model are (i) the binary choice and (ii) the reaction time on each trial.
+• Fix one valuation model and one choice rule; specify three (or more) RT models. Commit to a
+single discounting model that assigns a subjective value to each option (e.g. hyperbolic), grounded in
+the established discounting literature, and couple it to choice in the conventional way (e.g. a softmax
+/ logistic rule on the value difference ∆V). Hold this value computation and choice rule fixed. Then
+specify (at least) three RT models that differ in how the subjective values map onto response time — i.e. in
+the predictor / functional form, not in the noise distribution. For example, with RT modelled as a shifted
+log-normal whose location depends on a difficulty signal: µ= a−b|∆V|(absolute conflict) or µ=
+a−b(∆V)2 (squared conflict), among others you motivate. Each is a distinct psychological hypothesis
+about what drives response time. RT is rarely modelled in the discounting literature, so treat this as a
+deliberate extension that you motivate from the sequential-sampling / RT literature. The central question
+is then clean: which value→RT mapping best describes behaviour, and does modelling RT improve our
+account of the choices too?
+• Infer (run A). Estimate each model’s parameters from run A. State your estimator (e.g. MLE / MAP /
+posterior), write down the likelihood, and, if you use priors or regularisation, justify them. Per-participant
+and/or hierarchical estimation are both acceptable if motivated.
+• Identifiability / parameter recovery. Simulate synthetic data from each model with known parameters
+across a realistic range, re-fit, and quantify how well the parameters are recovered. State which parameters
+are (un)identifiable and why. Does using RT (vs. choices alone) change identifiability?
+• Reliability. Estimate the same model independently on run A and run B and quantify the test–retest
+reliability of the parameter estimates across participants. Interpret what this says about the stability of the
+constructs you are estimating.
+• Evaluate and compare out-of-sample (run B). Using the run A fits, predict run B. Report appropri-
+ate, correctly applied predictive metrics for both modalities (choice and RT), and report the reward and
+loss conditions separately. Comparisons across your RT models must be made on a common predictive
+quantity (see warning below).
+• Does RT help? (required choice-only baseline.) To answer this you must also fit a choice-only baseline:
+the identical valuation model and choice rule, estimated from the choices alone with the RT term removed
+from the likelihood (it is not a different model — it is the same model fit to one modality). Then, for
+each RT model, compare the full choice + RT fit against this choice-only baseline and ask whether using
+RT (a) improves out-of-sample choice prediction, and (b) sharpens parameter recovery / identifiability
+and reliability of the discounting and choice parameters (RT depends on ∆V, which depends on those
+parameters, so it carries information about them). State clearly what is gained or lost, and why.
+• Recommend. Recommend one (or more) RT model(s) with an explicit, evidence-based argument for
+why it is the best choice, and state whether modelling RT was worthwhile. Discuss limitations.
+What counts as a distinct RT model.
+Your RT models share one valuation model and one choice rule, and differ in how subjective value maps onto
+response time. An RT model is defined by that mapping — the predictor and its functional form — not by
+the probability distribution used to describe RTs.
+• Valid distinctions are differences in the value→RT mapping, e.g. RT location driven by |∆V|vs.
+(∆V)2 — each a different hypothesis about what slows people down (conflict, uncertainty, magnitude).
+• Not a distinct model: keeping the same value→RT mapping and changing only the observation/noise
+distribution (e.g. Gaussian vs. log-normal RTs), or merely re-parameterising the same mapping. Keep
+the RT noise distribution fixed across your models so the comparison isolates the mapping.
+For each RT model, state in one or two sentences the psychological hypothesis about response time that it
+embodies. If you cannot articulate how two of your models differ psychologically, they are not distinct.
+Warning on model comparison. A full choice + RT likelihood and a choice-only likelihood do not describe
+the same data, so their total log-likelihoods are not directly comparable (the joint fit also “pays” to predict RT).
+Compare your RT models on an RT predictive quantity (e.g. the RT predictive log-likelihood), and compare the
+RT-informed vs. choice-only fit on a choice quantity (e.g. the choice predictive log-likelihood or held-out choice
+accuracy). Make explicit which quantity you compare on
+
+DATASET DESCRIPTIONS
+Dataset 1: Probability Discounting Data Set
+In the uploaded zip folder “PD data.zip”, you will find 49 MATLAB data files obtained from 49 participants
+performing a probability discounting task. In each trial, a participant chooses between a smaller certain reward
+and a larger uncertain reward.
+In each file, you will find three data structures (loadable via pandas, https://pandas.pydata.org/):
+• data train: matrix of trials of an initial experiment (run A; use for inference).
+• data test: matrix of trials of a successive experiment (run B; use for evaluation).
+• data labels: array of strings describing each column of the data matrices.
+Rows index trials (1 to N). The 8 columns contain:
+1. Reward magnitude for the certain choice rcert
+2. Reward magnitude for the uncertain choice runcert
+3. Event outcome probability
+4. Choice (1=certain, 2=uncertain, 0=missing)
+5. p cert (experimental conditions)
+6. Condition (1=reward discounting, 2=loss discounting)
+7. Reaction time
+8. Odds
+
+Dataset 2: Delay Discounting Data Set
+In the uploaded zip folder “DD data.zip”, you will find 99 MATLAB data files obtained from 99 participants
+performing a delay discounting task (two samples from two experiments with slightly different setups). In each
+trial, a participant chooses between a smaller immediate reward and a larger delayed reward.
+In each file, you will find three data structures (loadable via pandas, https://pandas.pydata.org/):
+• data train: matrix of trials of an initial experiment (run A; use for inference).
+• data test: matrix of trials of a successive experiment (run B; use for evaluation).
+• data labels: array of strings describing each column of the data matrices.
+Rows index trials (1 to N). The 8 columns contain:
+1. Reward magnitude for the immediate choice rimm
+2. Reward magnitude for the delayed choice rdel
+3. Delay
+4. Choice (1=immediate, 2=delayed, 0=missing)
+5. p imm (experimental conditions)
+6. Condition (1=reward discounting, 2=loss discounting)
+7. Reaction time
+
