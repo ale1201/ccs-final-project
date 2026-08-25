@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+
+\usepackage{tabularx}
+\usepackage{array}
+
+% xcolor (loaded by macros_FP) and the later color package clash unless the
+% options are declared up front; this keeps macros_FP.tex untouched.
+\PassOptionsToPackage{usenames,dvipsnames}{color}
+\input{macros_FP}
+
+\newcommand{\fillme}[1]{\textcolor{red}{[#1]}}
+
+\begin{document}
+
+\section*{AI Usage Disclosure}
+
+\subsection*{Student information}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+Name: & Maria Alejandra Pabon Galindo \\[0.6em]
+Matriculation number: & \fillme{fill in} \\[0.6em]
+Project title: & Conflict, not confidence: which value$\to$RT mapping best describes probability discounting, and does RT help? \\[0.6em]
+Group members, if applicable: & Ashhad Raza Quadri, Saliq Neyaz, Maria Alejandra Pabon Galindo \\
+\end{tabularx}
+
+\bigskip
+
+\subsection*{AI use statement}
+
+Please tick one option:
+
+\medskip
+
+\noindent
+$\square$ \textbf{No AI tools used.}
+
+\noindent
+I confirm that I did not personally use generative AI tools, AI-based writing
+assistants, translation tools, image generators, code assistants, or similar AI
+systems in preparing my contribution to this project.
+
+\medskip
+
+\noindent
+$\square$ \textbf{AI tools used and disclosed below.}
+
+\noindent
+I confirm that I used AI tools only in limited and transparent ways that preserved
+the independent character of my work. I remain fully responsible for the accuracy,
+academic integrity, citations, methodology, code, analyses, and final submitted
+content.
+
+\medskip
+\noindent\fillme{Tick exactly one box above (replace its $\backslash$square with
+$\backslash$blacksquare), then delete this note.}
+
+\bigskip
+
+\subsection*{Details of AI use}
+
+If no AI tools were used, write ``Not applicable'' in the first row.
+
+\medskip
+
+\begin{tabularx}{\textwidth}{|
+>{\raggedright\arraybackslash}X|
+>{\raggedright\arraybackslash}X|
+>{\raggedright\arraybackslash}X|
+>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{AI tool used} &
+\textbf{Purpose of use} &
+\textbf{Parts of the project affected} &
+\textbf{Extent of use / student responsibility} \\
+\hline
+\fillme{tool and version} & \fillme{what you used it for} & \fillme{which sections,
+figures or functions} & \fillme{how much was AI-produced, and your statement that you
+checked it and can explain it} \\
+[2.5em]
+\hline
+\fillme{tool} & \fillme{purpose} & \fillme{part} & \fillme{extent} \\
+[2.5em]
+\hline
+ & & & \\
+[2.5em]
+\hline
+\end{tabularx}
+
+\medskip
+\noindent\fillme{Note. The course permits AI for language and grammar correction,
+formatting, high-level brainstorming, and help understanding or debugging code, but
+\emph{not} for generating the substantive argument, analysis, interpretation of results,
+final prose, or complete solutions. Declare here, honestly and specifically, every use
+you personally made, including any AI-assisted material that entered the shared report,
+code, analyses or figures. Delete this note once the table is filled.}
+
+\bigskip
+
+\subsection*{Prompt log}
+
+\noindent
+Did you retain a prompt log or notes documenting the AI-assisted steps?
+
+\medskip
+
+\noindent
+$\square$ Yes, attached or available upon request.
+
+\noindent
+$\square$ No AI tools were used.
+
+\noindent
+$\square$ No prompt log was retained. Explanation:
+\fillme{explanation}
+
+\bigskip
+
+\subsection*{Individual contribution and responsibility}
+
+\noindent
+Briefly describe your own contribution to the project, including report writing,
+coding, modelling, analyses, figures, or interpretation of results:
+
+\medskip
+
+\noindent
+I owned \textbf{RT model M3 (quadratic conflict, $\mu=a-b\Delta V^2$)}: its specification, psychological motivation, fitting and evaluation. I also built the \textbf{out-of-sample evaluation on run B} (applying run A parameters unchanged, the choice and RT predictive metrics, the by-condition breakdown and the calibration check) and the \textbf{choice-only baseline} together with the ``does RT help'' comparison on choice quantities.
+
+\medskip
+
+\noindent
+The work was divided equally in three. Shared components -- the valuation model and choice rule, the shifted log-normal RT distribution, the model-comparison framework, the figures and this report -- were developed jointly, and I reviewed and accept responsibility for the parts I contributed to.
+
+\bigskip
+
+\noindent
+In the case of a group project, I confirm that I have reviewed the shared report,
+code, analyses, and figures to which I contributed. I accept responsibility for my
+own contribution and for any AI-assisted material included in shared components
+that I reviewed, used, or submitted as part of the project.
+
+\bigskip
+
+\subsection*{Final confirmation}
+
+\noindent
+I confirm that I have not submitted AI-generated content as my own without review,
+verification, and disclosure. I have checked all factual claims, references, data,
+code, analyses, and interpretations myself. I have not entered sensitive,
+personal, confidential, or copyright-protected material into AI systems in
+violation of data protection, copyright, or course rules.
+
+\bigskip
+\bigskip
+
+\noindent
+\textbf{Name and signature:} Maria Alejandra Pabon Galindo\quad\rule{5cm}{0.4pt}
+\hfill
+\textbf{Date:} \rule{4cm}{0.4pt}
+
+\end{document}
