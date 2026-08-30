@@ -50,8 +50,8 @@ $-1.562$ ($p=0.040$, $0.004$), and it is the one ranking here that replicates fr
 Against a choice-only baseline fitted to the identical model, adding RT changes held-out choice
 prediction by $-0.037$, $+0.003$ and $+0.025$ nats per trial, none significant, and it does not
 stabilise the constructs: every cross-context reliability of the discounting parameters sits
-near zero and the two shifts excluding zero are losses. A same-task control locates the cause
---- fitting half of run A and predicting the other half gives $-0.464$ nats per trial with 49 of
+near zero and the two shifts excluding zero are losses. A same-task control locates the cause: fitting
+half of run A and predicting the other half gives $-0.464$ nats per trial with 49 of
 49 participants above chance, against $-1.004$ and 6 of 49 across tasks. We recommend decision
 uncertainty as the best description of response time, while concluding that modelling RT does
 not improve the account of the choices. Non-decision time is not identifiable.
@@ -111,7 +111,7 @@ $\log(r_{unc}/r_{cert})$ fitted at each $p$ and condition gives the indifference
 $\theta$, and a hyperboloid predicts $r_{unc}/r_{cert}=1+h\theta$, linear in $\theta$; the
 rearrangement presupposes an undiscounted smaller option, so it is estimated on run A only.
 Figure~\ref{fig:data} shows that it holds, with slopes $h\approx3.72$ for gains and
-$h\approx0.64$ for losses --- the model-free signature of the reflection effect
+$h\approx0.64$ for losses, the model-free signature of the reflection effect
 \citep{kahneman1979,green2004}, and close to the fitted medians below, which is the check that
 the likelihood is coded correctly.
 
@@ -155,9 +155,9 @@ $\varepsilon\sim\cN(0,1)$, so for $rt>\tau$
 \end{equation}
 Holding this distribution identical across the three RT models is what makes the comparison one
 of mappings rather than of distributional shape. The full trial likelihood is
-$p(\text{choice},RT\mid\theta)=p(y_t\mid\theta)\,p(rt_t\mid\theta)$ --- the modalities are
-conditionally independent given the shared latent $\Delta V$, and that shared valuation is what
-makes the model multimodal --- and the models differ only in the location:
+$p(\text{choice},RT\mid\theta)=p(y_t\mid\theta)\,p(rt_t\mid\theta)$, since the modalities are
+conditionally independent given the shared latent $\Delta V$; that shared valuation is what
+makes the model multimodal. The models differ only in the location:
 M1, $\mu_t=a-b\,|\Delta V_t|$; M2, $\mu_t=a-b\,|2P_t-1|$; M3, $\mu_t=a-b\,\Delta V_t^{2}$.
 
 \paragraph{Psychological hypotheses.}
@@ -255,7 +255,7 @@ absolute errors confirm the improvement under M1 and M3 ($p<10^{-4}$) and only w
 ($p=0.03$ and $0.16$).
 
 Repeating the study over run B designs answers a prior question that Section~3.3 cannot: is $h$
-recoverable at all where $\theta_{cert}>0$? It is, though less sharply --- $\log h_{gain}$ falls
+recoverable at all where $\theta_{cert}>0$? It is, though less sharply: $\log h_{gain}$ falls
 from $0.925/0.900/0.977$ to $0.888/0.816/0.931$ with RMSE up by roughly $40\%$, as expected when
 the identifying signal is split across two entangled discount terms instead of one, and M3's
 advantage survives (RMSE ratio $0.61$ against $0.79$ and $1.01$). Whatever fails between the
@@ -264,16 +264,16 @@ runs in Section~3.2, it is not identifiability.
 \subsection{Reliability}
 
 Because run A and run B are different decision structures, this section measures whether a
-construct generalises across contexts, not classical test--retest --- and on that reading the
+construct generalises across contexts, not classical test--retest, and on that reading the
 discounting parameters do not generalise (Fig.~\ref{fig:reliability},
 Table~\ref{tab:reliability}): under the baseline $\log h_{gain}$ reaches only $r=0.180$ (CI
 $[-0.08,+0.45]$, ICC $0.14$), $\log h_{loss}$ $0.191$, $\log\beta$ $0.215$ and $\beta_0$
 $0.103$, every CI including zero. Such values are low even by the standards of cognitive-task
 parameters \citep{hedge2018,enkavi2019}; Section~3.3 shows why.
 
-What \emph{is} stable is everything independent of the valuation --- the RT level $a$, $\tau$
+What \emph{is} stable is everything independent of the valuation: the RT level $a$, $\tau$
 and $\log\sigma$ (for which we report Spearman, since a few extreme-RT participants inflate
-Pearson) --- while the difficulty slope $b$ is not stable at all. Participants carry a
+Pearson). The difficulty slope $b$ is not stable at all. Participants carry a
 reproducible speed and spread between the two tasks, but neither a reproducible discount rate
 nor a reproducible sensitivity of RT to difficulty.
 
@@ -291,8 +291,8 @@ lifts baseline $\log h_{gain}$ only to $0.288$.
 nats per trial, M2 ahead of M1 ($p=0.040$) and M3 ($p=0.004$), M1 ahead of M3 ($p=0.008$). M2 is
 nominally best in both conditions, has the lowest $\log$RT RMSE ($0.754$), and is the one
 ranking here that generalises: on run A it already beat M1 ($p=0.005$) and M3 ($p=0.015$). Every
-model still loses about $0.21$ nats per trial between runs --- more than any difference between
-models --- because participants speed up by a median of $0.40$\,s while $\tau$ and $a$ are fixed
+model still loses about $0.21$ nats per trial between runs, more than any difference between
+models, because participants speed up by a median of $0.40$\,s while $\tau$ and $a$ are fixed
 from run A.
 
 \emph{Choice.} Carried across tasks the choice model performs \emph{below} chance
@@ -336,7 +336,7 @@ $0.008$). It leads in both conditions and is the only ranking here that survives
 structurally different run B. Psychologically that favours
 saturation: what slows a participant is indecision, not value distance. The counterweight is
 that M2 is the weakest of the three
-at what RT was meant to buy us --- its simulated recovery gain for $\log h_{gain}$ is nil (RMSE
+at what RT was meant to buy us: its simulated recovery gain for $\log h_{gain}$ is nil (RMSE
 ratio $0.98$ against M3's $0.47$) and it most damages the stability of $\log h_{loss}$
 ($\Delta r=-0.404$, CI $[-0.79,-0.01]$). We recommend it as the best description of response
 time, not as an improvement to the discounting model.
@@ -348,14 +348,14 @@ materialise. Model RT if response time is the object of study, not for a better 
 
 \textbf{What we could not establish, and limitations.} We cannot claim any mapping is true: M2
 wins by $0.04$--$0.07$ nats per trial against a between-run drop of $\approx0.20$ that hits every
-model equally. Nor can we estimate a transferable discount rate --- and that is structural, not a
+model equally. Nor can we estimate a transferable discount rate, and that is structural, not a
 modelling failure. $h$ recovers from run-B-structure designs ($r=0.82$--$0.93$), and the
 same-task control predicts held-out run A choices at $-0.464$ nats per trial with 49 of 49
 participants above chance, against $-1.004$ and 6 of 49 across tasks: model and estimator are
 sound, transfer is what fails, and \S3.2 follows from it. Three limitations bound the rest. The
 RT model is descriptive, not mechanistic: a shifted log-normal with a value-driven location
 cannot separate drift from boundary, so a speed--accuracy shift and a change in valuation are
-confounded in $b$ --- the likeliest reason RT can damage $h$. $\tau$ is unidentified, and the
+confounded in $b$, the likeliest reason RT can damage $h$. $\tau$ is unidentified, and the
 floor applied to run B RTs below run A's $\tau$ is worth about $0.05$ nats per trial, the same
 order as the gaps between RT models; M2 is also the least numerically stable model, a caveat we
 state rather than hide about the model we recommend. Finally the model is deliberately simple:
