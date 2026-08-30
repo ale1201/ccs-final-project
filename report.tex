@@ -23,8 +23,8 @@ Computational Cognitive Science --- Final Project, Summer Term 2026\\[8pt]
 \textbf{Name} & \textbf{Matriculation no.} & \textbf{Contribution}\\
 \hline
 Ashhad Raza Quadri & 4756039 & M1; data pipeline; parameter recovery\\
-Saliq Neyaz & \textcolor{red}{[fill in]} & M2; inference; test--retest reliability\\
-Maria Alejandra Pabon Galindo & \textcolor{red}{[fill in]} & M3; run B evaluation; choice-only baseline\\
+Saliq Neyaz & 4756033 & M2; inference; test--retest reliability\\
+Maria Alejandra Pabon Galindo & 4756044 & M3; run B evaluation; choice-only baseline\\
 \end{tabular}\\[3pt]
 
 {\small The valuation model, choice rule, comparison framework and report were developed
@@ -34,27 +34,24 @@ jointly; the three authors contributed equally. Requested assessment: full gradi
 \medskip
 
 \noindent\textbf{Abstract}\quad
-We model the choices and the reaction times of 49 participants in a probability discounting
-task with reward and loss conditions. One valuation model is held fixed: a Rachlin hyperboloid
-in the odds against reward, $V_i=r_i/(1+h\theta_i)$ applied to both options, with separate rates
-for gains and losses, coupled to choice by a logistic rule on the normalised value difference
-$\Delta V$.
-Three RT models sit on top of it and differ only in how $\Delta V$ enters the location of a
-shifted log-normal: linear conflict ($|\Delta V|$), decision uncertainty ($|2P-1|$) and
-quadratic conflict ($\Delta V^2$). A structural feature of the data governs everything that
-follows: run A is sure-vs-risky and run B risky-vs-risky, so both options must be discounted
-and run B is an unseen decision structure rather than a retest. Estimation is per participant
-by MAP on run A. On the quantity that separates the mappings, the run B RT predictive
-log-likelihood, decision uncertainty wins at $-1.492$ nats per trial against $-1.536$ and
-$-1.562$ ($p=0.040$, $0.004$), and it is the one ranking here that replicates from in-sample.
-Against a choice-only baseline fitted to the identical model, adding RT changes held-out choice
-prediction by $-0.037$, $+0.003$ and $+0.025$ nats per trial, none significant, and it does not
-stabilise the constructs: every cross-context reliability of the discounting parameters sits
-near zero and the two shifts excluding zero are losses. A same-task control locates the cause: fitting
-half of run A and predicting the other half gives $-0.464$ nats per trial with 49 of
-49 participants above chance, against $-1.004$ and 6 of 49 across tasks. We recommend decision
-uncertainty as the best description of response time, while concluding that modelling RT does
-not improve the account of the choices. Non-decision time is not identifiable.
+We model choices and reaction times of 49 participants in a probability discounting task with
+reward and loss conditions. One valuation model is fixed: a Rachlin hyperboloid
+$V_i=r_i/(1+h\theta_i)$ on both options, separate gain and loss rates, with a logistic
+choice rule on the normalised value difference $\Delta V$. Three RT models differ only in
+how $\Delta V$ sets the location of a shifted log-normal: linear conflict ($|\Delta V|$), where
+value distance slows the choice; decision uncertainty ($|2P-1|$), where indecision does; and
+quadratic conflict ($\Delta V^2$), where only near-ties slow it. Run A is sure-vs-risky, run B
+risky-vs-risky: an unseen structure, not a retest. Estimation is per-participant MAP on run A.
+Every parameter recovers well ($r=0.83$--$0.98$) except non-decision time ($r\le0.29$). On the run B RT predictive log-likelihood, decision uncertainty wins ($-1.492$ nats
+per trial against $-1.536$ and $-1.562$; $p=0.040$, $0.004$), the only ranking that
+replicates in-sample. Adding RT sharpens recovery of the discount rates (RMSE ratio
+$0.47$, quadratic conflict), but this does not transfer: against a choice-only baseline it
+moves held-out choice prediction by at most $0.037$ nats per trial, none significant, and
+cross-context reliability of the discount parameters is near zero. A same-task control locates
+the cause: held-out run A choices reach $-0.464$ nats per trial, 49 of 49 above
+chance, against $-1.004$ and 6 of 49 across tasks. We recommend decision
+uncertainty as the best description of response time; modelling RT does not improve the account
+of choices.
 
 \section{Introduction}
 
