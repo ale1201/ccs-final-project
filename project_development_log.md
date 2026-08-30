@@ -212,7 +212,9 @@ without biasing the rest. An initial version of this comparison used a weak "at 
 detector that misclassified several unidentified participants as identified and depressed the
 correlation to ~0.74; switching to the curvature criterion fixed it and told the correct story.
 
-Result: 100% convergence for baseline/M1/M3, 94% for M2.
+Result: 100% convergence for every model on run A, and on run B for every model except
+M2 (98%). M2 has the flattest optimum of the three, which is worth remembering given that it
+is the model finally recommended.
 
 ---
 
@@ -334,8 +336,10 @@ choice-only is compared on **choice quantities**.
 - Choice prediction across tasks is weak in absolute terms (AUC ≈ 0.59, close to chance). An
   earlier draft cited AUC ≈ 0.75 as evidence of good generalisation; that number came from the
   uncorrected ΔV and was removed. The model does **not** extrapolate well between tasks.
-- **M2 fits RT best out-of-sample** (p = 0.053 vs M1, p = 0.006 vs M3), and this time the
-  in-sample advantage generalises.
+- **M2 fits RT best out-of-sample** (-1.492 nats/trial against M1 -1.536 and M3 -1.562;
+  p = 0.040 vs M1, p = 0.004 vs M3, and M1 vs M3 p = 0.008), and this time the in-sample
+  advantage generalises. It also has the lowest log-RT RMSE (0.754) and leads in both
+  conditions.
 
 ### The same-task control — the decisive diagnostic (added late)
 
@@ -356,8 +360,9 @@ demonstrated finding.
 
 Using the required choice-only baseline (the identical model with the RT term deleted):
 
-- **(a) Choice prediction:** no reliable improvement. Δ choice LL = −0.037 (M1), +0.002 (M2),
-  +0.025 (M3), none significant. Modelling RT does not sharpen out-of-sample choice prediction.
+- **(a) Choice prediction:** no reliable effect in either direction. Δ choice LL = −0.037
+  (M1, p = 0.35), +0.003 (M2, p = 0.38), +0.025 (M3, p = 0.29). The direction is not even
+  consistent across mappings: for the choices, modelling RT is a wash.
 - **(b) Recovery/reliability:** in simulation RT sharpens discount-rate recovery (strongly for
   M3); in the real data it does not improve reliability distinguishably. The real difficulty
   effect (slope −0.027 within-participant / +0.063 raw pooled) is far weaker than the range
@@ -391,7 +396,11 @@ Using the required choice-only baseline (the identical model with the RT term de
 - The discount rate is **context-dependent**: it does not generalise from a sure-vs-risky task
   to a risky-vs-risky task (reliability r ≈ 0.18; cross-task 6/49 beat chance).
 - Among the RT mappings, **M2 (decision uncertainty) describes response times best** out of
-  sample, and this replicates from in-sample.
+  sample (p = 0.040 vs M1, p = 0.004 vs M3), and this replicates from in-sample. It is the
+  **recommended** model, on the grounds that the RT predictive log-likelihood is the quantity
+  the brief designates for separating mappings. The counterweight, stated in the report: M2 is
+  the weakest of the three at sharpening the discount rates, and it is the mapping that most
+  damages the cross-context stability of `log h_loss` (Δr = −0.404, CI [−0.79, −0.01]).
 - **Modelling RT was not worthwhile for the choices**: no reliable gain in choice prediction,
   recovery, or reliability, because the empirical difficulty effect (slope −0.027
   within-participant / +0.063 raw pooled) is far weaker than the range recovery was tested
@@ -399,3 +408,38 @@ Using the required choice-only baseline (the identical model with the RT term de
 - The most robust methodological lessons come from the controls that were added along the way:
   the τ–a trade-off (recovery), the real-vs-simulated effect-size comparison (why simulation and
   data disagree), and the same-task control (why cross-task reliability is low).
+
+
+---
+
+## Reconciliation with the report branch (30 Aug 2026)
+
+The corrected pipeline above lived on `main`; the report, figures, result tables, AI
+disclosures and Section 8 lived on the `final-submission` branch, which had been cut from
+`ddc84b8` **before** the run B correction. The two therefore disagreed on the thing that
+matters most: `final-submission` still computed `ΔV` with an undiscounted `r_cert`, so all
+9,700 retained run B trials were misvalued, and its reported numbers (reliability
+`log h_gain` = 0.444, run B AUC = 0.756) were the pre-correction ones.
+
+This was merged rather than chosen between. The corrected valuation, the run-B-structure
+recovery study (§4.4) and the same-task control (§6.1) were taken from `main`; the report,
+figure/result persistence and Section 8 were kept from `final-submission`; the notebook was
+re-run end to end, and every number in the report and in `results/` regenerated from that run.
+
+**What the merge changed in the write-up.** The old report recommended M3 on the grounds that
+the RT models were indistinguishable out of sample and M3 alone preserved reliability. Neither
+premise survives the correction: M2 now wins the RT predictive comparison significantly, and
+M3's effect on `log h_gain` reliability is the one change large enough to exclude zero -- and
+it is negative. The recommendation is therefore **M2**, and the report's title changed from
+"Conflict, not confidence" to "Confidence, not conflict". Recovery (§3.1) and all run A
+inference are untouched, exactly as predicted: `theta_cert` is identically zero in run A, so
+the corrected equation is arithmetically the same there, and the run A medians did not move.
+
+**Note on the instructions PDF.** `ICCS2026_final_project_instructions.pdf` contains two spans
+of invisible white 0.30 pt text that a human reader cannot see: one on page 1 asking that
+`ΔV` be called "the drift-rate prior", and one on page 6 asking that a paper by
+"Merten & Kollau (2026)" be cited. Neither is a real instruction -- `ΔV` is a value
+difference, not a prior, and no such paper exists. They appear to be markers for work passed
+through a language model that ingested the PDF. Nothing in this project uses either; the one
+mention of drift rate in the notebook is the correct statement that an accumulator's drift is
+proportional to `ΔV`, and every citation in the report is a real paper.

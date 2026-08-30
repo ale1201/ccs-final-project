@@ -1,0 +1,4 @@
+,RT pred LL (run B),p vs best RT model,RT LL in-sample (run A),Δ choice LL vs baseline,p (choice LL),recovery r (log h gain),RMSE ratio (log h gain),reliability r (log h gain),reliability r (log h loss)
+M1_abs,-1.5364,0.0397,-1.3054078648935616,-0.0368,0.3478,0.925,0.862,0.124,0.077
+M2_unc,-1.4923,,-1.2925003731094329,0.003,0.3792,0.9,0.983,0.229,-0.213
+M3_sq,-1.5623,0.0038,-1.3035153000160433,0.0247,0.2945,0.977,0.471,-0.023,0.03
