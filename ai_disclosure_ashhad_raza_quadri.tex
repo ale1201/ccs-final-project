@@ -69,26 +69,32 @@ If no AI tools were used, write ``Not applicable'' in the first row.
 \textbf{Parts of the project affected} &
 \textbf{Extent of use / student responsibility} \\
 \hline
-Claude (Anthropic), used through Claude Code, July--August 2026 &
-A second opinion on choices I had already made, and help making sense of error messages when
-my code broke &
-The parts I own: RT model M1 (linear conflict, $\mu=a-b|\Delta V|$), the data pipeline and the
-parameter-recovery simulation &
-Advice only. I wrote and ran all of the code myself, and every modelling decision, number and
-figure is my own. I can explain and reproduce all of them \\
-[1.5em]
+Claude Code (Anthropic) &
+A second opinion on decisions I had already taken, and assistance in understanding and
+debugging Python code I had written myself (MATLAB loading and indexing errors, edge cases in
+the trial-cleaning rules, convergence failures in the recovery re-fits) &
+Data pipeline code for my components (Sec. 2.1): the loader, the cleaning and missing-response
+rules, the per-participant quality diagnostics and the run A vs run B comparability analysis.
+Parameter-recovery code (Sec. 3.1, Table 2): the simulator, the sampling ranges, the recovery
+statistics and the recovery matrix. Associated plotting code for Figs. 1, 3 and 4 &
+Advisory only. I wrote and ran every routine myself; the specification of M1, the cleaning
+rules, the simulation design and the statistics reported were my decisions. I tested all code
+against the model-free estimates (Sec. 2.1) and can explain every line. No AI was used to
+interpret results or to decide what the analyses show \\
+[0.4em]
 \hline
-Claude (Anthropic), used through Claude Code, August 2026 &
-Language and grammar correction, and help with formatting: tightening the wording and cutting
-the abstract down to the 250-word limit &
-The written report (\texttt{report.tex}), mainly the abstract. No results, numbers or figures
-were changed &
-Wording only; the content is our own. I read back every sentence that was edited and checked it
-against the result it reports \\
-[1.5em]
+Claude Code (Anthropic) &
+Language and grammar correction and rephrasing of text I had already drafted myself, together
+with help condensing the abstract to the 250-word limit &
+The abstract, and my own paragraphs in Sec. 2.1 (data), Sec. 3.1 (parameter recovery and
+identifiability) and the corresponding passages of Sec. 4 &
+Wording and clarity only. Every claim, number, argument and interpretation is my own; no
+passage was accepted without my review, and no substantive prose was generated from scratch by
+AI \\
+[0.4em]
 \hline
  & & & \\
-[1.5em]
+[0.4em]
 \hline
 \end{tabularx}
 
