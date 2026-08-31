@@ -18,7 +18,7 @@
 
 \begin{tabularx}{\textwidth}{>{\bfseries}l X}
 Name: & Maria Alejandra Pabon Galindo \\[0.6em]
-Matriculation number: & \fillme{fill in} \\[0.6em]
+Matriculation number: & 4756044 \\[0.6em]
 Project title: & Conflict, not confidence: which value$\to$RT mapping best describes probability discounting, and does RT help? \\[0.6em]
 Group members, if applicable: & Ashhad Raza Quadri, Saliq Neyaz, Maria Alejandra Pabon Galindo \\
 \end{tabularx}
@@ -42,17 +42,13 @@ systems in preparing my contribution to this project.
 \medskip
 
 \noindent
-$\square$ \textbf{AI tools used and disclosed below.}
+$\blacksquare$ \textbf{AI tools used and disclosed below.}
 
 \noindent
 I confirm that I used AI tools only in limited and transparent ways that preserved
 the independent character of my work. I remain fully responsible for the accuracy,
 academic integrity, citations, methodology, code, analyses, and final submitted
 content.
-
-\medskip
-\noindent\fillme{Tick exactly one box above (replace its $\backslash$square with
-$\backslash$blacksquare), then delete this note.}
 
 \bigskip
 
@@ -73,26 +69,28 @@ If no AI tools were used, write ``Not applicable'' in the first row.
 \textbf{Parts of the project affected} &
 \textbf{Extent of use / student responsibility} \\
 \hline
-\fillme{tool and version} & \fillme{what you used it for} & \fillme{which sections,
-figures or functions} & \fillme{how much was AI-produced, and your statement that you
-checked it and can explain it} \\
+Claude Code (Anthropic. Model: Claude Sonnet 5) &
+Assistance with reviewing, validating and debugging code I had drafted for the data
+pipeline and the parameter-recovery pipeline: diagnosing bugs, improving code and, once I confirmed the extension was an appropriate next step, drafting an additional recovery check under run B's task structure from a specification I
+reviewed and approved. &
+Data loading and cleaning. Parameter recovery. The M1
+(linear-conflict) RT model's implementation within the shared model dispatcher and its associated recovery and plotting code. &
+AI reviewed and debugged routines I had specified and drafted; where it proposed a
+code change or an extension, I decided whether to adopt it and reviewed the result before running it myself. The choices, selection of hypothesis and implementation decisions are my own. I ran all code
+myself, checked its output to validate every new line of code, and understood it. \\
 [2.5em]
 \hline
-\fillme{tool} & \fillme{purpose} & \fillme{part} & \fillme{extent} \\
-[2.5em]
-\hline
- & & & \\
+Claude Code (Anthropic. Model: Claude Sonnet 5) &
+Language and grammar correction and rephrasing of text I had already drafted
+myself. &
+My own paragraphs for data pipeline and parameter recovery /
+identifiability, and the corresponding passages of the development log and final report. Along with the parts completed through collaborative work and final verification &
+Wording and clarity. Every claim, number, argument and interpretation is my
+own; no passage was accepted without my review, and no substantive prose was
+generated from scratch by AI. \\
 [2.5em]
 \hline
 \end{tabularx}
-
-\medskip
-\noindent\fillme{Note. The course permits AI for language and grammar correction,
-formatting, high-level brainstorming, and help understanding or debugging code, but
-\emph{not} for generating the substantive argument, analysis, interpretation of results,
-final prose, or complete solutions. Declare here, honestly and specifically, every use
-you personally made, including any AI-assisted material that entered the shared report,
-code, analyses or figures. Delete this note once the table is filled.}
 
 \bigskip
 
@@ -104,7 +102,7 @@ Did you retain a prompt log or notes documenting the AI-assisted steps?
 \medskip
 
 \noindent
-$\square$ Yes, attached or available upon request.
+$\blacksquare$ Yes, attached or available upon request.
 
 \noindent
 $\square$ No AI tools were used.
@@ -124,12 +122,29 @@ coding, modelling, analyses, figures, or interpretation of results:
 \medskip
 
 \noindent
-I owned \textbf{RT model M3 (quadratic conflict, $\mu=a-b\Delta V^2$)}: its specification, psychological motivation, fitting and evaluation. I also built the \textbf{out-of-sample evaluation on run B} (applying run A parameters unchanged, the choice and RT predictive metrics, the by-condition breakdown and the calibration check) and the \textbf{choice-only baseline} together with the ``does RT help'' comparison on choice quantities.
+I owned the data pipeline (Sec.~2.1), RT model M1 ($\mu = a - b|\Delta V|$, linear conflict), and parameter recovery (Sec.~3.1).
+
+\textbf{Data pipeline.} Built and validated the loader, cleaning rules, and derived $\theta$/scale columns; discovered that run A ($\theta_{cert}\equiv0$, sure-vs-risky) and run B
+($\theta_{cert}>0$, risky-vs-risky) are not the same task, requiring both options to be discounted identically.
+
+\textbf{M1.} Specified, fit, and evaluated it, including different analysis against M1 and M3.
+
+\textbf{Parameter recovery.} Built the simulator and paired recovery loop, the $\tau$--$a$
+identifiability diagnostic, and the run-B-structure recovery extension (Sec.~3.1), showing $h$
+remains recoverable but modestly worse than under run A.
+
+Drafted the report text for Sec.~2.1, the M1 parts of Sec.~2.2, and Sec.~3.1, plus corresponding
+passages of Sec.~3.4 and Sec.~4.
+
 
 \medskip
 
 \noindent
-The work was divided equally in three. Shared components -- the valuation model and choice rule, the shifted log-normal RT distribution, the model-comparison framework, the figures and this report -- were developed jointly, and I reviewed and accept responsibility for the parts I contributed to.
+The work was divided equally in three. Shared components -- the Rachlin
+hyperboloid valuation model and logistic choice rule, the shifted log-normal RT
+distribution, the model-comparison framework, the figures and this report -- were
+developed jointly, and I reviewed and accept responsibility for the parts I
+contributed to.
 
 \bigskip
 
@@ -154,8 +169,8 @@ violation of data protection, copyright, or course rules.
 \bigskip
 
 \noindent
-\textbf{Name and signature:} Maria Alejandra Pabon Galindo\quad\rule{5cm}{0.4pt}
+\textbf{Name and signature:} Maria Alejandra Pabon Galindo
 \hfill
-\textbf{Date:} \rule{4cm}{0.4pt}
+\textbf{Date:} 31 August 2026
 
 \end{document}
